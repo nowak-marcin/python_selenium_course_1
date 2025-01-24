@@ -2,6 +2,8 @@
 #       <code here>
 #       return <something>
 
+# Słowo kluczowe return powoduje opuszczenie funkcji (instrukcje umieszczone poniżej nie są wykonywane).
+# Return pozwala również na przekazanie wartości z wnętrza funkcji do reszty programu
 # parameters i return - sa opcjonalne
 # zmienne w funkcji sa uzyte tylko lokalnie - w funkcji i jej wywolaniu
 # jesli chcemy uzyc globalnie - global
@@ -28,3 +30,22 @@ value3 = my_multi_func(3,5)
 print(value3)
 value4 = my_multi_func(0,2)
 print(value4)
+
+
+# dokumentowanie funkcji
+
+def oblicz_pole_prostokata(dlugosc, szerokosc):
+    """
+    Funkcja oblicza pole prostokata.
+    :param dlugosc: float, w metrach
+    :param szerokosc: float, w metrach
+    :return: pole, w metrach kwadratowych
+    """
+    return dlugosc * szerokosc
+
+
+pole_1 = oblicz_pole_prostokata(5.0, 6.0)
+pole_2 = oblicz_pole_prostokata(100,1.0)
+
+print(pole_1)
+print(pole_2)
