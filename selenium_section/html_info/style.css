@@ -1,0 +1,7 @@
+h1.red-header {color: red;}
+p {font-size: 30px;}
+li.bold-phrase {font-weight: bold; color: blue;}	
+
+img.diagram {width:300px; height: 200px; border-radius: 25px;}
+
+tr.table-header {background-color: grey; color: white;}
