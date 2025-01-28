@@ -1,20 +1,34 @@
-class Salary:
-    def __init__(self, pay, bonus):
-        self.pay = pay
-        self.bonus = bonus
+# W powyższym przykładzie klasa Pracownik korzysta z kompozycji,
+# umieszczając obiekt klasy Pensja jako jej atrybut.
+# Dzieki temu Pracownik może korzystać z metod zdefiniowanych w klasie Pensja poprzez instancję tej klasy.
 
-    def annual_salary(self):
-        return (self.pay*12) + self.bonus
+# Metoda __str__ w Pythonie pozwala nam zdefiniować niestandardową reprezentację obiektu
+# w postaci ciągu znaków.
+# Domyślnie, gdy drukujemy obiekt lub konwertujemy go na ciąg znaków za pomocą str()
 
 
-class Employee:
-    def __init__(self, name, age, pay, bonus):
-        self.name = name
-        self.age = age
-        self.obj_salary = Salary(pay, bonus)
+class Pensja:
+    def __init__(self, pensja: int, stopa_podwyzki: float):
+        self.pensja = pensja
+        self.stopa_podwyzki = stopa_podwyzki
 
-    def total_salary(self):
-        return self.obj_salary.annual_salary()
+    def roczna_pensja(self):
+        return self.pensja * (1 + self.stopa_podwyzki)
 
-emp = Employee('max', 25, 15000, 10000)
-print(emp.total_salary())
+    def __str__(self):
+        return f'Pensja: {self.pensja}, Stopa podwyżki: {self.stopa_podwyzki*100}%'
+
+class Pracownik:
+    def __init__(self, imie: str, nazwisko: str, pensja: Pensja):
+        self.imie = imie
+        self.nazwisko = nazwisko
+        self.pensja = pensja # kompozycja: obiekt Pensja jest częścią obiektu Pracownik
+
+    def __str__(self):
+        return f'Pracownik: {self.imie} {self.nazwisko}, Zarabia rocznie: {self.pensja} PLN'
+
+
+pracownik1 = Pracownik('jan', 'kowalski', 7000)
+print(pracownik1)
+pracownik2 = Pensja(7000, 0.05)
+print(pracownik2)

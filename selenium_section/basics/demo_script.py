@@ -42,7 +42,3 @@
 
 # close the browser:
 # driver.quit()
-
-
-
-
