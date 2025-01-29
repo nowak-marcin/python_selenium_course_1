@@ -23,22 +23,22 @@ driver.quit()
 
 print('test OK')
 
-# CSS_SELECTOR:
+# XPATH:
 driver = webdriver.Chrome()
 driver.get('http://demostore.supersqa.com/')
 
-cart = driver.find_element(By.CSS_SELECTOR, '#site-header-cart')
+cart = driver.find_element(By.XPATH, '//*[@id="site-header-cart"]')
 cart.click()
 time.sleep(3)
 driver.quit()
 
 print('test OK')
 
-# XPATH:
+# CSS_SELECTOR:
 driver = webdriver.Chrome()
 driver.get('http://demostore.supersqa.com/')
 
-cart = driver.find_element(By.XPATH, '//*[@id="site-header-cart"]')
+cart = driver.find_element(By.CSS_SELECTOR, '#site-header-cart > li:nth-child(1) > a')
 cart.click()
 time.sleep(3)
 driver.quit()
