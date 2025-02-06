@@ -30,3 +30,13 @@ class MyAccountSignedOut(MyAccountSignedOutLocator):
 
     def wait_until_error_is_displayed(self, expected_err):
         self.SeleniumExtended.wait_until_element_contains_text(self.ERROR_UL, expected_err)
+
+    def input_register_email(self, email):
+        self.SeleniumExtended.wait_and_input_text(self.REGISTER_EMAIL, email)
+
+    def input_register_password(self, password):
+        self.SeleniumExtended.wait_and_input_text(self.REGISTER_PASSWORD, password)
+
+    def click_register_button(self):
+        logger.info('klikasz w register button')
+        self.SeleniumExtended.wait_and_click(self.REGISTER_BTN)
