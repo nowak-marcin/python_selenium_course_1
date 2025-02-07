@@ -32,3 +32,6 @@ class CartPage(CartPageLocator):
         success_msg = self.get_displayed_message()
         assert success_msg == 'Coupon code applied successfully.', 'nieoczekiwana odpowiedz'
 
+    def click_on_proceed_to_checkout(self):
+        self.SeleniumExtended.wait_and_click(self.PROCEED_TO_CHECKOUT_BTN)
+

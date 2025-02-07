@@ -8,6 +8,8 @@ class CartPageLocator:
     APPLY_COUPON_BTN = (By.CSS_SELECTOR, 'button[name="apply_coupon"]')
 
     CART_PAGE_MESSAGE = (By.CLASS_NAME, 'woocommerce-message')
+    PROCEED_TO_CHECKOUT_BTN = (By.CSS_SELECTOR, 'a.checkout-button')
+
 
 
 

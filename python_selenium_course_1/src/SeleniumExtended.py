@@ -1,6 +1,7 @@
-from selenium.common import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.common import TimeoutException, StaleElementReferenceException
+import time
 
 
 class SeleniumExtended:
@@ -16,9 +17,15 @@ class SeleniumExtended:
 
     def wait_and_click(self, locator, timeout=None):
         timeout = timeout if timeout else self.default_timeout
+        try:
+            WebDriverWait(self.driver, timeout).until(
+                EC.visibility_of_element_located(locator)).click()
+        except StaleElementReferenceException:
+            time.sleep(2)
+            WebDriverWait(self.driver, timeout).until(
+                EC.visibility_of_element_located(locator)).click()
 
-        WebDriverWait(self.driver, timeout).until(
-            EC.visibility_of_element_located(locator)).click()
+    # wait_and_click - zamiast 2x visibility_of_element... mozna dac element_to_be_clickable.
 
     def wait_until_element_contains_text(self, locator, text, timeout=None):
         timeout = timeout if timeout else self.default_timeout
@@ -48,5 +55,3 @@ class SeleniumExtended:
         element_text = element.text
 
         return element_text
-
-
