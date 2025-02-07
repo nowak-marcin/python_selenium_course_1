@@ -6,6 +6,7 @@ from python_selenium_course_1.src.pages.CartPage import CartPage
 from python_selenium_course_1.src.configs.generic_configs import GenericConfigs
 from python_selenium_course_1.src.pages.CheckoutPage import CheckoutPage
 from python_selenium_course_1.src.pages.OrderReceivedPage import OrderReceivedPage
+# from python_selenium_course_1.src.helpers.database_helpers import get_order_from_db_by_order_no
 
 
 @pytest.mark.usefixtures("init_driver")
@@ -54,3 +55,5 @@ class TestEndToEndCheckoutGuestUser:
         print(f'===***{order_no}***===')
 
         # verify order is recorder in db (via sql or api)
+        # db_order = get_order_from_db_by_order_no(order_no)
+        # assert db_order, 'order zalozony w CRM, ale brak go w DB'
