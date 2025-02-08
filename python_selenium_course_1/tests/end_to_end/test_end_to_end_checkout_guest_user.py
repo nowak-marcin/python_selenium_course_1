@@ -54,6 +54,6 @@ class TestEndToEndCheckoutGuestUser:
         order_no = order_received_p.get_order_number()
         print(f'===***{order_no}***===')
 
-        # verify order is recorder in db (via sql or api)
+        # verify order is recorder in db (via sql or api):
         # db_order = get_order_from_db_by_order_no(order_no)
         # assert db_order, 'order zalozony w CRM, ale brak go w DB'
