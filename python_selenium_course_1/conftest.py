@@ -26,3 +26,8 @@ def init_driver(request):
 #       driver = webdriver.Chrome()
 #   elif browser in ('firefox', 'ff'):
 #       driver = webdriver.Firefox()
+
+#   ===========================pytest-html========================================
+#   konfiguracja raportowania testow w html report
+#   ustawienia na podstawie dokumentacji - hook
+#   ustawienie generowania raportow i screenow tylko dla testow FE
