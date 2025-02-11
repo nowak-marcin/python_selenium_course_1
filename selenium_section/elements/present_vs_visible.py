@@ -6,7 +6,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 driver = webdriver.Chrome()
 wait = WebDriverWait(driver, 5)
 
-url = 'file:///C:/Users/marcinnowak/OneDrive%20-%20intive/Desktop/qa_automation_learning/python_selenium_course_1/selenium_section/elements/present_vs_visible_example_with_cars.html'
+url = 'file:///C:/Users/nowak/Desktop/qa_auto_learn/python_selenium_course_1/selenium_section/elements/present_vs_visible_example_with_cars.html'
 driver.get(url)
 
 bmw = driver.find_element(By.ID, 'bmw')

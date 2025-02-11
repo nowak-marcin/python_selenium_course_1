@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 
 driver = webdriver.Chrome()
 
-url = 'file:///C:/Users/marcinnowak/OneDrive%20-%20intive/Desktop/qa_automation_learning/python_selenium_course_1/selenium_section/elements2/radios_example.html'
+url = 'file:///C:/Users/nowak/Desktop/qa_auto_learn/python_selenium_course_1/selenium_section/elements2/radios_example.html'
 driver.get(url)
 
 expected_default_value = '21-40'

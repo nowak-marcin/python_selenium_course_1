@@ -5,7 +5,7 @@ from selenium.webdriver.support.ui import Select
 
 driver = webdriver.Chrome()
 
-url = 'file:///C:/Users/marcinnowak/OneDrive%20-%20intive/Desktop/qa_automation_learning/python_selenium_course_1/selenium_section/elements2/drop_down_example.html'
+url = 'file:///C:/Users/nowak/Desktop/qa_auto_learn/python_selenium_course_1/selenium_section/elements2/drop_down_example.html'
 
 driver.get(url)
 my_dropdown = driver.find_element('id', 'age-range-select')

@@ -8,7 +8,7 @@ from selenium import webdriver
 
 driver = webdriver.Chrome()
 
-url = 'file:///C:/Users/marcinnowak/OneDrive%20-%20intive/Desktop/qa_automation_learning/python_selenium_course_1/selenium_section/elements2/alerts_example.html'
+url = 'file:///C:/Users/nowak/Desktop/qa_auto_learn/python_selenium_course_1/selenium_section/elements2/alerts_example.html'
 driver.get(url)
 
 # ad.2):

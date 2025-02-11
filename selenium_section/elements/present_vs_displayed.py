@@ -3,7 +3,7 @@ from selenium import webdriver
 driver = webdriver.Chrome()
 driver.implicitly_wait(5)
 
-url = 'file:///C:/Users/marcinnowak/OneDrive%20-%20intive/Desktop/qa_automation_learning/python_selenium_course_1/selenium_section/elements/present_vs_displayed.html'
+url = 'file:///C:/Users/nowak/Desktop/qa_auto_learn/python_selenium_course_1/selenium_section/elements/present_vs_displayed.html'
 
 driver.get(url)
 
