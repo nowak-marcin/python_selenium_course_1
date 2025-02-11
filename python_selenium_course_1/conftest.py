@@ -12,20 +12,16 @@ def init_driver(request):
     driver.quit()
 
 
-#   supported_browsers = ['chrome', 'ch', 'headlesschrome', 'firefox', 'ff']
-
-#   browser = os.environ.get('BROWSER', None)
-#   if not browser:
-#       raise Exception('zmienna srodowiskowa jest obowiazkowa')
-
-#   browser = browser.lower()
-#   if browser not in supported_browsers:
-#       raise Exception('ta przegladarka nie jest obslugiwana')
-
-#   if browser in ('chrome', 'ch'):
+# @pytest.fixture(params=['chrome', 'firefox'], scope='class')
+# def init_driver(request):
+#   if request.param == 'chrome':
 #       driver = webdriver.Chrome()
-#   elif browser in ('firefox', 'ff'):
+#   if request.param == 'firefox':
 #       driver = webdriver.Firefox()
+#   request.cls.driver = driver
+#   yield
+#   diver.quit()
+
 
 #   ===========================pytest-html========================================
 #   konfiguracja raportowania testow w html report

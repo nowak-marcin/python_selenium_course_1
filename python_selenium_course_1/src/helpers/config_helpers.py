@@ -12,8 +12,8 @@ def get_base_url():
 #   else:
 #       raise Exception(f'unknown environment: {env}')
 
+#   =========================================================================
 #   def get_database_credentials():
-
 #   env = os.environ.get.('ENV', 'test')
 #   db_user = os.environ.get('DB_USER')
 #   db_password = os.environ.get('DB_PASSWORD')
