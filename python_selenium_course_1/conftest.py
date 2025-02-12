@@ -22,6 +22,8 @@ def init_driver(request):
 #   yield
 #   diver.quit()
 
+#   terminal: pytest -sv <plik.py> --browser chrome
+
 
 #   ===========================pytest-html========================================
 #   konfiguracja raportowania testow w html report
