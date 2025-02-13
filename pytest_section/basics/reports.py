@@ -1,6 +1,7 @@
 # 1) pytest-html:
 # terminal: pip install pytest-html
 # terminal: pytest --html=my_report.html --self-contained-html
+# terminal: pytest .\pytest_section\basics\ -v-s --html=my_all_test_results.html
 
 
 # 2) allure framework:
