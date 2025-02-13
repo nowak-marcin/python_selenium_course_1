@@ -5,9 +5,10 @@ from selenium import webdriver
 
 @pytest.fixture(scope="class")
 def init_driver(request):
+    # before test:
     driver = webdriver.Chrome()
-
     request.cls.driver = driver
+    # after test (teardown):
     yield
     driver.quit()
 
