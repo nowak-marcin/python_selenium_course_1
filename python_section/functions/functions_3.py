@@ -20,7 +20,7 @@ print(num_small)
 num_small = get_count_of_small_word(my_text_1, max_size=5)
 print(num_small)
 
-
+print('===========')
 # ex2:
 
 def connect_to_database(host='test.db.com', username='testuser', password='testpass'):
@@ -30,3 +30,19 @@ def connect_to_database(host='test.db.com', username='testuser', password='testp
 
 connect_to_database()
 connect_to_database('prod.db.com', 'uatuser')
+
+print('===========')
+# ex.3:
+
+def zip_my_2_lists(my_clubs, my_cities):
+    # zwroci zlaczona nazwe:
+    for club, city in zip(my_clubs, my_cities):
+        print(club, city)
+    # zwroci slownik:
+    new_zip_list = zip(my_clubs, my_cities)
+    print(dict(new_zip_list))
+
+my_clubs = ('arsenal', 'real', 'borussia', 'psg')
+my_cities = ('london', 'madrit', 'dortmund', 'paris')
+
+zip_my_2_lists(my_clubs, my_cities)

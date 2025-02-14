@@ -11,18 +11,14 @@ for i in range(10):
         break
     print(i)
 
-
 print('======')
-
 
 for i in range(10):
     if i % 2 == 0:  # jeśli i jest liczbą parzystą
         continue
     print(i)
 
-
 print('======')
-
 
 main_number = 15
 my_input = 0
@@ -33,9 +29,7 @@ while True:
         break
 print('done!!!')
 
-
 print('======')
-
 
 capitals = {
     'peru': 'lima',
@@ -52,9 +46,7 @@ for country, capital in capitals.items():
         print('stolica jest:', capital)
         break
 
-
 print('======')
-
 
 book_prices = {'calculus': 300, 'physics': 255, 'chemistry': 400, 'english': 150, 'theather': 100}
 my_courses = {'physics', 'english', 'psychology', 'calculus', 'history'}
