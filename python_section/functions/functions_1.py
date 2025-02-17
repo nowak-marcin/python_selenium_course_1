@@ -7,11 +7,11 @@
 # parameters i return - sa opcjonalne
 # zmienne w funkcji sa uzyte tylko lokalnie - w funkcji i jej wywolaniu
 # jesli chcemy uzyc globalnie - global
-# parametres - moga miec zdefiniowane wartosci domyslne (keyword params)
+# arguments - positional, required, optional, keyword
 
 
-def my_adding_func(a, b=1):
-    return a + b
+def my_adding_func(a, b, c=1):
+    return a + b + c
 
 
 def my_multi_func(a, b):
@@ -22,9 +22,9 @@ def my_multi_func(a, b):
         return 'jedna z liczb to zero!'
 
 
-value1 = my_adding_func(5, 10)
+value1 = my_adding_func(5, 10, c=5)
 print(value1)
-value2 = my_adding_func(5)
+value2 = my_adding_func(5, b=5)
 print(value2)
 value3 = my_multi_func(3,5)
 print(value3)
@@ -36,16 +36,16 @@ print(value4)
 
 def oblicz_pole_prostokata(dlugosc, szerokosc):
     """
-    Funkcja oblicza pole prostokata.
-    :param dlugosc: float, w metrach
-    :param szerokosc: float, w metrach
-    :return: pole, w metrach kwadratowych
+    funcja oblicza pole prostokata
+    :param dlugosc: dluzszy bok w [m]
+    :param szerokosc: krotszy bok w [m]
+    :return: pole prostokata w [m2]
     """
-    return dlugosc * szerokosc
+    pole = dlugosc * szerokosc
+    return f'pole prostokata jest rowne: {pole}'
 
 
 pole_1 = oblicz_pole_prostokata(5.0, 6.0)
 pole_2 = oblicz_pole_prostokata(100,1.0)
-
 print(pole_1)
 print(pole_2)
