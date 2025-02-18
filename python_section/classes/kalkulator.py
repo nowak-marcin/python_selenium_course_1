@@ -23,4 +23,3 @@ print(myresult1.multiply())
 myresult2 = BasicCalculator(10,10)
 print(myresult2.subtract())
 print(myresult2.devide())
-
