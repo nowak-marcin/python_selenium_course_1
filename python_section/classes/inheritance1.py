@@ -36,13 +36,15 @@ class Cat(Animal):
 
 
 mydog1 = Dog('red', 'meat', 'buldog', 'max')
-print(f'Pies to: {mydog1.race}, imie to: {mydog1.name}, kolor to: {mydog1.color}')
+print(f'rasa psa to: {mydog1.race}, imie to: {mydog1.name}')
 mydog1.eat()
-mydog1.bark()
+mydog1.coloristic()
 mydog1.breath()
+mydog1.bark()
 
 mycat1 = Cat('black', 'whiskas', 'pers', 'luna')
-print(f'rasa kota to: {mycat1.race}, a imie to: {mycat1.name}')
+print(f'rasa kota to: {mycat1.race}, imie to: {mycat1.name}')
 mycat1.eat()
-mycat1.meaw()
+mycat1.coloristic()
 mycat1.breath()
+mycat1.meaw()
