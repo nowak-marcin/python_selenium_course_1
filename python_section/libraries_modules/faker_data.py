@@ -10,9 +10,11 @@ fake_data = Faker('pl_PL')
 # print(fake_data.address())
 
 # import danych do pliku excel:
-wb = Workbook()
-ws = wb.active
+wb = Workbook() # inicjalizacja
+ws = wb.active  # utworzenie aktywnej strony (worksheet)
 
+# i - liczba wierszy
+# j - liczba kolumn
 for i in range(1,5):
     for j in range(1,3):
         ws.cell(row=i, column=1).value = fake_data.name()
