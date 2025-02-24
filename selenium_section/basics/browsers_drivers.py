@@ -11,7 +11,7 @@
 # from selenium import webdriver
 # from selenium.webdriver.chrome.service import Service
 
-# se = Service(executable_path='/.../.../.../chromedriver')
+# se = Service(executable_path='C:\\...\\chromedriver.exe')
 # driver = webdriver.Chrome(service=se)
 
 # dodanie zmiennej srodowiskowej (najlepsza opcja):
@@ -24,6 +24,17 @@ driver = webdriver.Chrome()
 
 driver.get('http://demostore.supersqa.com/')
 time.sleep(5)
+driver.maximize_window()
+
+time.sleep(5)
+print(driver.title)
 
 driver.quit()
 print('smoke test OK')
+
+
+# wersja z webdriver-manager:
+# import webdriver_manager.chrome import ChromeDriverManager
+
+# driver = webdriver.Chrome(ChromeDriverManager().install())
+# driver.get('http://demostore.supersqa.com/')
