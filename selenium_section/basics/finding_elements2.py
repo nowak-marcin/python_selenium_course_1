@@ -7,6 +7,8 @@ driver.get('http://demostore.supersqa.com/')
 # TAG_NAME (musi to byc tag <a>)
 all_links = driver.find_elements(By.TAG_NAME, 'a')
 print(f'ilosc tagow o nazwie <a> to: {len(all_links)}')
+for i in all_links:
+    print(i.text)
 
 # LINK_TEXT (musi to byc tag <a>)
 account_elm = driver.find_element(By.LINK_TEXT, 'My account')

@@ -27,7 +27,23 @@ time.sleep(5)
 driver.maximize_window()
 
 time.sleep(5)
-print(driver.title)
+assert driver.title == 'Demo eCom Store – Just another WordPress site', 'incorrect title!'
+print(driver.title, driver.current_url)
+
+time.sleep(5)
+my_acc_cart = driver.find_element('link text', 'My account')
+my_acc_cart.click()
+time.sleep(5)
+
+my_acc_cart_title = driver.find_element('tag name', 'h1')
+my_acc_cart_title_text = my_acc_cart_title.text
+assert my_acc_cart_title_text == 'My account', 'incorrect title!'
+print(driver.title, driver.current_url)
+time.sleep(5)
+
+driver.back()
+time.sleep(5)
+print(driver.title, driver.current_url)
 
 driver.quit()
 print('smoke test OK')

@@ -1,5 +1,6 @@
 # from selenium.webdriver.common.by import By
-# find_element - zwraca pojedynczy webelement, find_elements - zwraca liste webelementów
+# find_element - zwraca pojedynczy webelement,
+# find_elements - zwraca liste webelementow
 
 # find_element(By.ID,'<locator>')
 # find_element('xpath', '<locator>)
