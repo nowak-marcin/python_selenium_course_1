@@ -8,18 +8,31 @@ class AutoSuggestDropdown:
 
     def __init__(self):
         self.driver = webdriver.Chrome()
-        self.driver.get('https://www.lot.com/pl/pl')
+        self.driver.get('https://rozklad-pkp.pl/')
         self.driver.maximize_window()
-        time.sleep(5)
+        time.sleep(7)
 
-    def from_full_name_of_city(self, full_name):
-        depart_from = self.driver.find_element(By.CSS_SELECTOR, "div[class='airport-select__value']")
-        depart_from.click()
-        time.sleep(5)
-        input_from = self.driver.find_element(By.ID, "airport-select-0_combobox")
+    def start_full_name_of_city(self, full_name):
+        input_from = self.driver.find_element(By.ID, 'from-station')
+        input_from.click()
         input_from.send_keys(full_name)
         time.sleep(5)
         input_from.send_keys(Keys.ENTER)
+        time.sleep(5)
+
+    def end_list_of_cities(self, part_name):
+        input_to = self.driver.find_element(By.ID, 'to-station')
+        self.driver.execute_script("arguments[0].scrollIntoView(true)", input_to)
+        input_to.click()
+        time.sleep(5)
+        input_to.send_keys(part_name)
+        time.sleep(5)
+        results = self.driver.find_elements(By.TAG_NAME, "li")
+        for result in results:
+            if 'Szczecin Podjuchy' in result.text:
+                result.click()
+                time.sleep(5)
+                break
         time.sleep(5)
 
     def close_browser(self):
@@ -28,5 +41,6 @@ class AutoSuggestDropdown:
 
 
 autosuggest1 = AutoSuggestDropdown()
-autosuggest1.from_full_name_of_city('Szczecin')
+autosuggest1.start_full_name_of_city('Szczecin Główny')
+autosuggest1.end_list_of_cities('Szczecin')
 autosuggest1.close_browser()
