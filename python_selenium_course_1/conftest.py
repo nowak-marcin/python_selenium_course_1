@@ -2,14 +2,15 @@ import pytest
 from selenium import webdriver
 # import os
 
+#====driver initialization====
 
 @pytest.fixture(scope="class")
 def init_driver(request):
-    # before test:
+    # before all tests in class (setup):
     driver = webdriver.Chrome()
     request.cls.driver = driver
-    # after test (teardown):
     yield
+    # after all tests in class (teardown):
     driver.quit()
 
 
@@ -26,7 +27,8 @@ def init_driver(request):
 #   terminal: pytest -sv <plik.py> --browser chrome
 
 
-#   ===========================pytest-html========================================
-#   konfiguracja raportowania testow w html report
-#   ustawienia na podstawie dokumentacji - hook
-#   ustawienie generowania raportow i screenow tylko dla testow FE
+#====pytest-html====
+
+# <to do>:
+# html_report
+# screenshots
