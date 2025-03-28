@@ -45,5 +45,5 @@ soft_assert('Hola')
         #self.assert_all()
 
 
-# 3) module pytest-soft-assertions with '--soft-assert' fla - do not work!
+# 3) module pytest-soft-assertions with '--soft-assert' flag - do not work!
 
