@@ -3,7 +3,8 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 
-# https://omayo.blogspot.com/
+# static table: https://omayo.blogspot.com/
+# dynamic table: https://demo.opencart.com/admin/ (demo/demo, -> Sales / Orders)
 
 # xpath:
 # - //table[@id='table1']/tbody/tr/td or //table[@id='table1']/tbody//td -> all data
@@ -57,6 +58,23 @@ class TableHandling:
         for data2 in col2_data:
             print(data2.text)
 
+    def print_table(self):
+        rows = self.driver.find_elements(By.XPATH, "//table[@id='table1']//tr")
+        columns = self.driver.find_elements(By.XPATH, "//table[@id='table1']//th")
+        num_rows = len(rows)
+        num_col = len(columns)
+        print(num_rows, num_col)
+
+        for r in range(1,num_rows+1):
+            for c in range(1, num_col+1):
+                if r == 1:
+                    data = self.driver.find_element(By.XPATH, "//table[@id='table1']//tr["+str(r)+"]//th["+str(c)+"]")
+                    print(data.text, end=' ')
+                else:
+                    data = self.driver.find_element(By.XPATH, "//table[@id='table1']//tr["+str(r-1)+"]//td["+str(c)+"]")
+                    print(data.text, end=' ')
+            print()
+
     def close_browser(self):
         self.driver.quit()
         print('test OK')
@@ -67,5 +85,6 @@ test1 = TableHandling()
 # test1.all_data_from_body()
 # test1.data_per_row()
 # test1.data_per_row_and_column()
-test1.data_per_column()
+# test1.data_per_column()
+test1.print_table()
 test1.close_browser()
